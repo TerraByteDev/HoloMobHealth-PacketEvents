@@ -1,6 +1,6 @@
 package net.skullian.updater;
 
-import com.loohp.platformscheduler.Scheduler;
+import com.loohp.holomobhealth.libs.com.loohp.platformscheduler.Scheduler;
 import net.skullian.HoloMobHealthPacketEvents;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;

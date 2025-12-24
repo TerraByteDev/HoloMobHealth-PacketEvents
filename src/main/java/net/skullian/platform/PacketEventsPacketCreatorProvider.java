@@ -142,10 +142,10 @@ public class PacketEventsPacketCreatorProvider implements PlatformPacketCreatorP
 
         List<EntityData<?>> entityData = new ArrayList<>();
         DataWatcherField name = fields.getCustomNameField();
-        entityData.add(c(name, getByFieldIndex(actualEntityData, name.getIndex())));
+        entityData.add(getByFieldIndex(actualEntityData, name.getIndex()));
 
         DataWatcherField visible = fields.getCustomNameVisibleField();
-        entityData.add(c(visible, getByFieldIndex(actualEntityData, visible.getIndex())));
+        entityData.add(getByFieldIndex(actualEntityData, visible.getIndex()));
 
         return c(new WrapperPlayServerEntityMetadata(entity.getEntityId(), entityData));
     }
