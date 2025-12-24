@@ -1,0 +1,14 @@
+name: HoloMobHealth-PacketEvents
+version: '1.1.0'
+main: net.skullian.HoloMobHealthPacketEvents
+api-version: 1.13
+description: Add PacketEvents support to HoloMobHealth
+depend: [HoloMobHealth, packetevents]
+authors: [Skullians, LOOHP]
+folia-supported: true
+
+libraries:
+  - net.kyori:adventure-text-serializer-plain:4.18.0
+  - net.kyori:adventure-text-serializer-legacy:4.18.0
+  - net.kyori:adventure-platform-bukkit:4.3.4
+  - net.kyori:adventure-text-minimessage:4.18.0
