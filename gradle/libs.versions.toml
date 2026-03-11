@@ -10,7 +10,7 @@ holomobhealth = "2.3.18.0"
 adventure = "4.26.1"
 adventure-platform = "4.4.1"
 
-lombok="1.18.42"
+lombok="1.18.44"
 shadow="9.3.0"
 properties = "2.5.4"
 
