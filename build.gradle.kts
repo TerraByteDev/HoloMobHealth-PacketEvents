@@ -8,7 +8,7 @@ plugins {
 }
 
 group = "net.skullian"
-version = "1.0.0"
+version = "1.1.0"
 
 repositories {
     mavenCentral()
@@ -46,7 +46,7 @@ dependencies {
 
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(17))
+        languageVersion.set(JavaLanguageVersion.of(21))
     }
 }
 
@@ -71,7 +71,7 @@ tasks {
         options.compilerArgs.add("-parameters")
         options.isFork = true
         options.encoding = "UTF-8"
-        options.release = 17
+        options.release = 21
     }
 }
 
