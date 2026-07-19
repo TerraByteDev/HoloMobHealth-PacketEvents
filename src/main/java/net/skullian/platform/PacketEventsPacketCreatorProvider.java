@@ -23,7 +23,6 @@ import com.loohp.holomobhealth.platform.PlatformPacketCreatorProvider;
 import com.loohp.holomobhealth.platform.packets.PlatformPacket;
 import com.loohp.holomobhealth.utils.MCVersion;
 import io.github.retrooper.packetevents.util.SpigotReflectionUtil;
-import net.kyori.adventure.platform.bukkit.BukkitComponentSerializer;
 import org.bukkit.Location;
 import org.bukkit.entity.Entity;
 import org.bukkit.util.Vector;
@@ -157,7 +156,7 @@ public class PacketEventsPacketCreatorProvider implements PlatformPacketCreatorP
         List<EntityData<?>> entityData = new ArrayList<>();
 
         DataWatcherField customNameField = fields.getCustomNameField();
-        Optional<net.kyori.adventure.text.Component> name = entityNameComponent == null ? Optional.empty() : Optional.of(BukkitComponentSerializer.gson().deserialize(GsonComponentSerializer.gson().serialize(entityNameComponent)));
+        Optional<net.kyori.adventure.text.Component> name = entityNameComponent == null ? Optional.empty() : Optional.of(net.kyori.adventure.text.serializer.gson.GsonComponentSerializer.gson().deserialize(GsonComponentSerializer.gson().serialize(entityNameComponent)));
         entityData.add(c(customNameField, name));
 
         DataWatcherField visibleField = fields.getCustomNameVisibleField();
@@ -185,7 +184,7 @@ public class PacketEventsPacketCreatorProvider implements PlatformPacketCreatorP
         entityData.add(c(byteField, bitmask));
 
         DataWatcherField customNameField = fields.getCustomNameField();
-        Optional<net.kyori.adventure.text.Component> name = component == null ? Optional.empty() : Optional.of(BukkitComponentSerializer.gson().deserialize(GsonComponentSerializer.gson().serialize(component)));
+        Optional<net.kyori.adventure.text.Component> name = component == null ? Optional.empty() : Optional.of(net.kyori.adventure.text.serializer.gson.GsonComponentSerializer.gson().deserialize(GsonComponentSerializer.gson().serialize(component)));
         entityData.add(c(customNameField, name));
 
         DataWatcherField visibleField = fields.getCustomNameVisibleField();
@@ -211,7 +210,7 @@ public class PacketEventsPacketCreatorProvider implements PlatformPacketCreatorP
         entityData.add(c(byteField, bitmask));
 
         DataWatcherField customNameField = fields.getCustomNameField();
-        Optional<net.kyori.adventure.text.Component> name = component == null ? Optional.empty() : Optional.of(BukkitComponentSerializer.gson().deserialize(GsonComponentSerializer.gson().serialize(component)));
+        Optional<net.kyori.adventure.text.Component> name = component == null ? Optional.empty() : Optional.of(net.kyori.adventure.text.serializer.gson.GsonComponentSerializer.gson().deserialize(GsonComponentSerializer.gson().serialize(component)));
         entityData.add(c(customNameField, name));
 
         DataWatcherField visibleField = fields.getCustomNameVisibleField();
@@ -251,7 +250,7 @@ public class PacketEventsPacketCreatorProvider implements PlatformPacketCreatorP
         entityData.add(c(byteField, bitmask));
 
         DataWatcherField customNameField = fields.getCustomNameField();
-        Optional<net.kyori.adventure.text.Component> name = entityNameComponent == null ? Optional.empty() : Optional.of(BukkitComponentSerializer.gson().deserialize(GsonComponentSerializer.gson().serialize(entityNameComponent)));
+        Optional<net.kyori.adventure.text.Component> name = entityNameComponent == null ? Optional.empty() : Optional.of(net.kyori.adventure.text.serializer.gson.GsonComponentSerializer.gson().deserialize(GsonComponentSerializer.gson().serialize(entityNameComponent)));
         entityData.add(c(customNameField, name));
 
         DataWatcherField visibleField = fields.getCustomNameVisibleField();
@@ -283,7 +282,7 @@ public class PacketEventsPacketCreatorProvider implements PlatformPacketCreatorP
         DataWatcherFields fields = NMS.getInstance().getDataWatcherFields();
         DataWatcherField customNameField = fields.getCustomNameField();
         DataWatcherField visibleField = fields.getCustomNameVisibleField();
-        Optional<net.kyori.adventure.text.Component> name = entityNameComponent == null ? Optional.empty() : Optional.of(BukkitComponentSerializer.gson().deserialize(GsonComponentSerializer.gson().serialize(entityNameComponent)));
+        Optional<net.kyori.adventure.text.Component> name = entityNameComponent == null ? Optional.empty() : Optional.of(net.kyori.adventure.text.serializer.gson.GsonComponentSerializer.gson().deserialize(GsonComponentSerializer.gson().serialize(entityNameComponent)));
         addOrReplaceDataWatcher(entityData, customNameField, name);
         addOrReplaceDataWatcher(entityData, visibleField, visible);
     }
