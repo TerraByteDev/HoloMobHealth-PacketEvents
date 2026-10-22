@@ -1,4 +1,4 @@
 # Welcome to the HMHPE Config.
 
 # Enable debug?
-Debug: true
+Debug: false
