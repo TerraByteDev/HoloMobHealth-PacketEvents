@@ -8,7 +8,7 @@ plugins {
 }
 
 group = "net.skullian"
-version = "1.1.1"
+version = "1.1.2"
 
 repositories {
     mavenCentral()
