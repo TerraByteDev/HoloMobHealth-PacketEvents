@@ -15,16 +15,16 @@ public class UpdateListener implements Listener {
 
     @EventHandler
     public void onJoin(PlayerJoinEvent event) {
+        Player player = event.getPlayer();
+        if (!player.hasPermission("holomobhealthpacketevents.checkupdate")) return;
+
         Scheduler.runTaskLaterAsynchronously(HoloMobHealthPacketEvents.instance, () -> {
-            Player player = event.getPlayer();
-            if (player.hasPermission("holomobhealthpacketevents.checkupdate")) {
-                checkUpdate(player);
-            }
+            if (player.isOnline()) checkUpdate(player);
         }, 100);
     }
 
     @EventHandler
     public void onStart(ServerLoadEvent event) {
-        checkUpdate(Bukkit.getConsoleSender());
+        Scheduler.runTaskAsynchronously(HoloMobHealthPacketEvents.instance, () -> checkUpdate(Bukkit.getConsoleSender()));
     }
 }
